@@ -10,20 +10,26 @@
 			<header>
 				<h1>Get Information For Your Trip</h1>
 			</header>
-			<section class ="locationCont">
-				<h2>Going Somewhere?</h2>
-				<label for="country">What Country?</label>
-				<input type="text" id="country" placeholder="Enter Country"/>
-				<label for="city">What City?</label>
-				<input type="text" id="city" placeholder="Enter City"/>
-			</section>
-			<section class ="dateCont">
-				<label for="date">When are you going?</label>
-				<input type="date" id="date"/>
-			</section>
-			<section class ="btnCont">
-				<button id="getInfo" type = "submit"> Get Info! </button>
-			</section>
+			<form id = "travelForm" onsubmit = "return Client.formSubmit(event)">
+				<section class ="locationCont">
+					<h2>Going Somewhere?</h2>
+					<label for="country">What Country?</label>
+					<input type="text" id="country" placeholder="Enter Country"/>
+					<label for="city">What City?</label>
+					<input type="text" id="city" placeholder="Enter City"/>
+				</section>
+				<section class ="dateCont">
+					<label for="date">When are you going?</label>
+					<input type="date" id="date"/>
+				</section>
+				<section class ="btnCont">
+					<button
+						id="getInfo"
+						type = "submit"
+						onclick = "return Client.formSubmit(event)"
+						onsubmit = "return Client.formSubmit(event)"> Get Info! </button>
+				</section>
+			</form>
 			<section class ="responseCont">
 				<h2 class = "title">Your Travel Information</h2>
 				<div id = "location"></div>
