@@ -7,14 +7,9 @@ const postData = async (url = '', data = {}) => {
 			'Content-Type': 'application/json'
 		},
 		body: JSON.stringify(data)
-	});
-		try {
-			const newData = await res.json();
-			return newData;
-		}
-		catch(error){
-			console.log('error', error);
-		}
+	})
+	.then(res => res.json())
+	.then(data => console.log(data))
 }
 
 export { postData };
