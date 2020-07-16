@@ -1,15 +1,7 @@
-import { URLSubmit } from './js/URLSubmit'
-import { statementSubmit } from './js/statementSubmit'
-import { checkSubmit } from './js/checkSubmit'
+import { getLocationInfo } from './js/getLocationInfo'
 
-import './styles/resets.scss'
-import './styles/base.scss'
-import './styles/form.scss'
-import './styles/footer.scss'
-import './styles/header.scss'
+import './styles/style.scss'
 
 export {
-    URLSubmit,
-    statementSubmit,
-	checkSubmit
+    getLocationInfo
 }
