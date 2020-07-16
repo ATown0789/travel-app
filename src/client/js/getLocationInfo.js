@@ -4,23 +4,26 @@ const username = '&maxRows=5&username=anthonycollini';
 
 /* Function called by event listener */
 const makeStuffHappen = () => {
-const country = `&countryBias=${document.getElementById('country').value}`;
-const city = `placename=${document.getElementById('city').value}`;
+const country = document.getElementById('country').value;
+const city = document.getElementById('city').value;
 	getLocationInfo(baseURL, city, country, username)
 		.then((data) => {
-			console.log('.then data',data);
-			postData('/addLocation',{
+			//Validate the information is for the correct location
+			const isCityName = (obj) => 
+				obj.adminName2.toLowerCase() === city.toLowerCase();
+			const index = data.postalCodes.findIndex(isCityName);
+			postData('/addLocationInfo',{
 			country: country,
 			city: city,
-			lng: data.postalCodes[0].lng,
-			lat: data.postalCodes[0].lat
+			lng: data.postalCodes[index].lng,
+			lat: data.postalCodes[index].lat
 			});
 		});
 };
 
 /* Function to GET Web API Data*/
 const getLocationInfo = async (baseURL, city, country, username) => {
-	const url = baseURL+city+country+username;
+	const url = `${baseURL}placename=${city}&countrybias=${country}${username}`;
 	const res = await fetch(url);
 	try{
 		const data = await res.json();
