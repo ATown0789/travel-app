@@ -55,7 +55,7 @@ const pixabay_key = process.env.pixabay_key;
 */
 
 // Callback function to complete POST '/addJournal'
-const addLocationInfo = (req, res) => {
+async function addLocationCord(req, res) {
 	const reqBody = req.body;
 	const locationData = {
 		country: reqBody.country,
@@ -66,26 +66,24 @@ const addLocationInfo = (req, res) => {
 	}
 	projectData.locationInfo = locationData;
 	projectData.date = reqBody.date
-	console.log(projectData);
 	//fetch weather data
-	const weatherURL = `https://api.weatherbit.io/v2.0/forecast/daily/?&lat=${projectData.locationInfo.lat}&lon=${projectData.locationInfo.lng}&key=${weatherbit_key}`;
-	fetch(weatherURL)
+	const weatherURL = `https://api.weatherbit.io/v2.0/forecast/daily/?&lat=${projectData.locationInfo.lat}&lon=${projectData.locationInfo.lng}&units=I&key=${weatherbit_key}`;
+	const responseWeather = await fetch(weatherURL)
 		.then(res => res.json())
 		.then(json => projectData.weatherData = json);
 	//fetch image for location
-	const pixabayURL = `https://pixabay.com/api/?key=${pixabay_key}&q=${projectData.locationInfo.city}+${projectData.locationInfo.country}&image_type=photo`
-	console.log(pixabayURL);
-	fetch(pixabayURL)
+	const pixabayURL = `https://pixabay.com/api/?key=${pixabay_key}&q=${projectData.locationInfo.city}+${projectData.locationInfo.country}&image_type=photo&category=travel`
+	const responsePix = await fetch(pixabayURL)
 		.then(res => res.json())
 		.then(json => {
-			projectData.locationImage = json.hits[0].webformatURL;
-			console.log(projectData);
+			const random = Math.floor(Math.random() * json.hits.length)
+			projectData.locationImage = json.hits[random].webformatURL;
 		});
 	res.send(projectData);
 }
 
-// Initialize '/addLocationInfo' Post Route
-app.post('/addLocationInfo', addLocationInfo);
+// Initialize '/addLocationCord' Post Route
+app.post('/addLocationCord', addLocationCord);
 
 /*End Post Routes*/
 
@@ -94,7 +92,11 @@ app.post('/addLocationInfo', addLocationInfo);
 * back to client side
 */
 
+const getInfo = (req, res) => {
+	res.send(projectData);
+}
 
+app.get('/', getInfo);
 
 /*End Get Routes*/
 
