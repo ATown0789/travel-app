@@ -4,7 +4,6 @@ const getLocationCord = async (baseURL, city, country = 'texas', username) => {
 	const res = await fetch(url);
 	try{
 		const data = await res.json();
-		console.log('fetch data', data);
 		return data;
 	}
 	catch(error){
