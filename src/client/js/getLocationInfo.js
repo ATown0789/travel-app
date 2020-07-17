@@ -1,5 +1,5 @@
 /* Function to GET Web API Data*/
-const getLocationInfo = async (baseURL, city, country, username) => {
+const getLocationInfo = async (baseURL, city, country = 'texas', username) => {
 	const url = `${baseURL}placename=${city}&countrybias=${country}${username}`;
 	const res = await fetch(url);
 	try{

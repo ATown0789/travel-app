@@ -1,4 +1,5 @@
 /* Function to POST data */
+const projectData;
 const postData = async (url = '', data = {}) => {
 	const res = await fetch(url,{
 		method: 'POST',
@@ -9,7 +10,9 @@ const postData = async (url = '', data = {}) => {
 		body: JSON.stringify(data)
 	})
 	.then(res => res.json())
-	.then(data => console.log(data))
+	.then(data => projectData = data)
 }
 
-export { postData };
+export { postData,
+		 projectData
+		};

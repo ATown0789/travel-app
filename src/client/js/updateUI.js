@@ -1,5 +1,5 @@
 const updateUI = () => {
-	console.log('updating UI');
+	console.log(Client.projectData);
 }
 
 export { updateUI };

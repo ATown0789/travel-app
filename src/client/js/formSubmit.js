@@ -19,8 +19,8 @@ const formSubmit = (event) => {
 			placeName: data.postalCodes[index].placeName,
 			date: date
 			});
+			Client.updateUI();
 		});
-	Client.updateUI();
 };
 
 export { formSubmit };

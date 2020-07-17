@@ -46,7 +46,7 @@ const server = app.listen(port, listening);
 
 //API Keys
 const weatherbit_key = process.env.weatherbit_key;
-
+const pixabay_key = process.env.pixabay_key;
 /*End Server Setup*/
 
 /***
@@ -67,10 +67,20 @@ const addLocationInfo = (req, res) => {
 	projectData.locationInfo = locationData;
 	projectData.date = reqBody.date
 	console.log(projectData);
+	//fetch weather data
 	const weatherURL = `https://api.weatherbit.io/v2.0/forecast/daily/?&lat=${projectData.locationInfo.lat}&lon=${projectData.locationInfo.lng}&key=${weatherbit_key}`;
 	fetch(weatherURL)
 		.then(res => res.json())
 		.then(json => projectData.weatherData = json);
+	//fetch image for location
+	const pixabayURL = `https://pixabay.com/api/?key=${pixabay_key}&q=${projectData.locationInfo.city}+${projectData.locationInfo.country}&image_type=photo`
+	console.log(pixabayURL);
+	fetch(pixabayURL)
+		.then(res => res.json())
+		.then(json => {
+			projectData.locationImage = json.hits[0].webformatURL;
+			console.log(projectData);
+		});
 	res.send(projectData);
 }
 
