@@ -86,20 +86,3 @@ async function addLocationCord(req, res) {
 app.post('/addLocationCord', addLocationCord);
 
 /*End Post Routes*/
-
-/***
-* Get Routes to send information 
-* back to client side
-*/
-
-const getInfo = (req, res) => {
-	res.send(projectData);
-}
-
-app.get('/', getInfo);
-
-/*End Get Routes*/
-
-
-
-
