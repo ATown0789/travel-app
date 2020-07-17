@@ -1,6 +1,7 @@
 /* Function to POST data */
-const projectData;
+
 const postData = async (url = '', data = {}) => {
+	let projectData = [];
 	const res = await fetch(url,{
 		method: 'POST',
 		credentials: 'same-origin',
@@ -10,9 +11,12 @@ const postData = async (url = '', data = {}) => {
 		body: JSON.stringify(data)
 	})
 	.then(res => res.json())
-	.then(data => projectData = data)
+	.then(data => {
+		console.log(data);
+		projectData.push(data);
+	});
+	
+	console.log('postData() projectData',projectData)
 }
 
-export { postData,
-		 projectData
-		};
+export { postData };

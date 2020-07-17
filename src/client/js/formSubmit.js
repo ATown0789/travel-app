@@ -5,13 +5,13 @@ const formSubmit = (event) => {
 	const country = document.getElementById('country').value;
 	const city = document.getElementById('city').value;
 	const date = document.getElementById('date').value;
-	Client.getLocationInfo(Client.baseURL, city, country, Client.username)
+	Client.getLocationCord(Client.baseURL, city, country, Client.username)
 		.then((data) => {
 			//Validate the information is for the correct location
 			const isCityName = (obj) => 
 				obj.adminName2.toLowerCase() === city.toLowerCase();
 			const index = data.postalCodes.findIndex(isCityName);
-			Client.postData('http://localhost:3000/addLocationInfo',{
+			Client.postData('http://localhost:3000/addLocationCord',{
 			country: country,
 			city: data.postalCodes[index].adminName2,
 			lng: data.postalCodes[index].lng,
@@ -19,8 +19,8 @@ const formSubmit = (event) => {
 			placeName: data.postalCodes[index].placeName,
 			date: date
 			});
-			Client.updateUI();
 		});
+	
 };
 
 export { formSubmit };
