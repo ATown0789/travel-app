@@ -1,6 +1,5 @@
-import { getLocationInfo } from './js/getLocationInfo';
-import { postData,
-		 projectData } from './js/postData';
+import { getLocationCord } from './js/getLocationCord';
+import { postData } from './js/postData';
 import { formSubmit } from './js/formSubmit';
 import { updateUI } from './js/updateUI';
 import { formValidation } from './js/formValidation';
@@ -12,12 +11,11 @@ const baseURL = 'http://api.geonames.org/postalCodeSearchJSON?'
 const username = '&username=anthonycollini';
 
 export {
-    getLocationInfo,
+    getLocationCord,
 	postData,
 	formSubmit,
 	updateUI,
 	formValidation,
 	baseURL,
-	username,
-	projectData
+	username
 }
