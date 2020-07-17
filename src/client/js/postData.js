@@ -12,11 +12,9 @@ const postData = async (url = '', data = {}) => {
 	})
 	.then(res => res.json())
 	.then(data => {
-		console.log(data);
 		projectData.push(data);
 	});
-	
-	console.log('postData() projectData',projectData)
+	Client.updateUI(projectData);
 }
 
 export { postData };
