@@ -1,10 +1,21 @@
-const updateUI = async () => {
+const updateUI = (projectData) => {
 	
-	const projectData = await Client.getInfo()
-		.then(data => console.log('update ui data',data))
+	const locationEl = document.getElementById('location');
+	const dateEl = document.getElementById('dateRes');
+	const weatherEl = document.getElementById('weather');
+	const imageEl = document.getElementById('locationImage');
 	
-	console.log('updating ui', projectData);
+	const city = projectData[0].locationInfo.city;
+	const country = projectData[0].locationInfo.country;
+	const weatherData = projectData[0].weatherData;
+	const imageURL = projectData[0].locationImage;
+	const date = projectData[0].date;
 	
+	locationEl.innerHTML = `You're going to ${city}, ${country}`;
+	dateEl.innerHTML = `You're leaving on ${date}`;
+	imageEl.src = imageURL;
+	
+	console.log(weatherData);
 	
 }
 
