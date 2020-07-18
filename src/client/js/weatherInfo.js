@@ -1,5 +1,6 @@
 const weatherInfo = (weatherData, date) => {
 	
+	const weatherCont = document.getElementById('weatherCont');
 	const city = weatherData.city_name;
 	const country = weatherData.country_code;
 	const date1 = new Date(date);
@@ -31,7 +32,7 @@ const weatherInfo = (weatherData, date) => {
 			const lowTempP = document.createElement('p');
 			const precipP = document.createElement('p');
 			//Assign classes to weather card elements
-			divEl.setAttribute('class','weatherCont');
+			divEl.setAttribute('class','weatherCard');
 			h3El.setAttribute('class','weatherHeader');
 			//Assign values to weather card elements
 			
@@ -50,7 +51,7 @@ const weatherInfo = (weatherData, date) => {
 			docFrag.appendChild(divEl);
 			dayCount++;
 		}
-		document.body.appendChild(docFrag);
+		weatherCont.appendChild(docFrag);
 	}
 	
 	//insert docfrag into dom element
