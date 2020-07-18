@@ -3,6 +3,8 @@ import { postData } from './js/postData';
 import { formSubmit } from './js/formSubmit';
 import { updateUI } from './js/updateUI';
 import { formValidation } from './js/formValidation';
+import { weatherInfo } from './js/weatherInfo';
+
 
 import './styles/style.scss';
 
@@ -16,6 +18,7 @@ export {
 	formSubmit,
 	updateUI,
 	formValidation,
+	weatherInfo,
 	baseURL,
 	username
 }
