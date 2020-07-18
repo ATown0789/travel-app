@@ -76,8 +76,12 @@ async function addLocationCord(req, res) {
 	const responsePix = await fetch(pixabayURL)
 		.then(res => res.json())
 		.then(json => {
-			const random = Math.floor(Math.random() * json.hits.length)
-			projectData.locationImage = json.hits[random].webformatURL;
+			if(json.hits.length < 1)
+				projectData.locationImage = 'https://cdn.pixabay.com/photo/2020/06/29/14/07/sunset-5352801_960_720.jpg';
+			else{
+				const random = Math.floor(Math.random() * json.hits.length);
+				projectData.locationImage = json.hits[random].webformatURL;
+			}
 		});
 	res.send(projectData);
 }
