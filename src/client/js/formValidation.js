@@ -8,14 +8,9 @@ const formValidation = (event) => {
 	const date = document.getElementById('date').value;
 	
 	const today = new Date()
-	console.log(today)
 	const todayDate = today.toLocaleDateString();
-	console.log(todayDate)
 	const todayTime = Math.floor(new Date(todayDate).getTime() / (1000*3600*24));
 	const trip = Math.floor(new Date(date).getTime() / (1000*3600*24));
-	console.log(todayTime);
-	console.log(trip)
-	console.log(todayTime > trip)
 
 	if(country === '' || city === '' || date === '')
 		alert('Please enter all form fields');
