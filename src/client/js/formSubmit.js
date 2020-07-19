@@ -1,7 +1,5 @@
 /* Function called by event listener */
-const formSubmit = (event) => {
-	event.preventDefault();
-	Client.formValidation();
+const formSubmit = () => {
 	const country = document.getElementById('country').value;
 	const city = document.getElementById('city').value;
 	const date = document.getElementById('date').value;
