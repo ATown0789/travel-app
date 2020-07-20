@@ -7,34 +7,38 @@
 	</head>
 	<body>
 		<main id = "app">
-			<header>
-				<h1>Get Information For Your Trip</h1>
+			<header id = "entryHead">
+				<h1>Going Somewhere?</h1>
 			</header>
-			<form id = "travelForm" onsubmit = "return Client.formSubmit(event)">
+			<form id = "travelForm" onsubmit = "return Client.formValidation(event)">
 				<section class ="locationCont">
-					<h2>Going Somewhere?</h2>
-					<label for="country">What Country?</label>
-					<input type="text" id="country" placeholder="Enter Country if US Enter State"/>
 					<label for="city">What City?</label>
 					<input type="text" id="city" placeholder="Enter City"/>
+					<label for="country">What Country?</label>
+					<input type="text" id="country" placeholder="Enter Country. If In USA, Enter State"/>
 				</section>
 				<section class ="dateCont">
-					<label for="date">When are you going?</label>
+					<label for="date">When are you leaving?</label>
 					<input type="date" id="date"/>
+				</section>
+				<section class ="dateCont">
+					<label for="date">When are you coming back?</label>
+					<input type="date" id="dateBack"/>
 				</section>
 				<section class ="btnCont">
 					<button
 						id="getInfo"
 						type = "submit"
-						onclick = "return Client.formSubmit(event)"
-						onsubmit = "return Client.formSubmit(event)"> Get Info! </button>
+						onclick = "return Client.formValidation(event)"
+						onsubmit = "return Client.formValidation(event)"> Get Info! </button>
 				</section>
 			</form>
-			<section class ="responseCont">
+			<section id ="responseCont">
+				<img id = "locationImage"/ src = "">
 				<h2 class = "title">Your Travel Information</h2>
 				<div id = "location"></div>
 				<div id = "dateRes"></div>
-				<img id = "locationImage"/ src = "">
+				<h2>Weather Forcast</h2>
 				<div id = "weatherCont"></div>
 			</section>
 		</main>

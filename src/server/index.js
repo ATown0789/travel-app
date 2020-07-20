@@ -61,8 +61,7 @@ async function addLocationCord(req, res) {
 		country: reqBody.country,
 		city: reqBody.city,
 		lng: reqBody.lng.toFixed(3),
-		lat: reqBody.lat.toFixed(3),
-		placeName: reqBody.placeName,
+		lat: reqBody.lat.toFixed(3)
 	}
 	projectData.locationInfo = locationData;
 	projectData.date = reqBody.date;
@@ -73,7 +72,7 @@ async function addLocationCord(req, res) {
 		.then(res => res.json())
 		.then(json => projectData.weatherData = json);
 	//fetch image for location
-	const pixabayURL = `https://pixabay.com/api/?key=${pixabay_key}&q=${projectData.locationInfo.city}+${projectData.locationInfo.country}&image_type=photo&category=travel`
+	const pixabayURL = `https://pixabay.com/api/?key=${pixabay_key}&q=${projectData.locationInfo.city}+${projectData.locationInfo.country}&image_type=photo`
 	const responsePix = await fetch(pixabayURL)
 		.then(res => res.json())
 		.then(json => {

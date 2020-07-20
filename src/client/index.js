@@ -4,13 +4,13 @@ import { formSubmit } from './js/formSubmit';
 import { updateUI } from './js/updateUI';
 import { formValidation } from './js/formValidation';
 import { weatherInfo } from './js/weatherInfo';
-
+import { config } from '../../config';
 
 import './styles/style.scss';
 
-/*Global Variables*/
-const baseURL = 'http://api.geonames.org/postalCodeSearchJSON?'
-const username = '&username=anthonycollini';
+/*APP Global Variables*/
+const baseURL = 'https://api.opencagedata.com/geocode/v1/json?'
+const username = config.GEO_KEY;
 
 export {
     getLocationCord,

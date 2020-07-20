@@ -1,5 +1,7 @@
 const updateUI = (projectData) => {
 	//name element constants
+	console.log(projectData);
+	const responseCont = document.getElementById('responseCont');
 	const locationEl = document.getElementById('location');
 	const dateEl = document.getElementById('dateRes');
 	const weatherEl = document.getElementById('weather');
@@ -11,6 +13,7 @@ const updateUI = (projectData) => {
 	const weatherData = projectData[0].weatherData;
 	const imageURL = projectData[0].locationImage;
 	const date = projectData[0].date;
+	const leaveDate = new Date(date);
 	const dateBack = projectData[0].dateBack;
 	
 	//make date display nicely
@@ -20,9 +23,10 @@ const updateUI = (projectData) => {
 		month: 'long',
 		day: 'numeric' 
 	}
-	const displayDate = new Date(date).toLocaleString(undefined, options);	
-	
+	const changeDate = new Date(`${leaveDate.getMonth() + 1}-${leaveDate.getDate()+1}-${leaveDate.getFullYear()}`);
+	const displayDate = changeDate.toLocaleString(undefined, options);
 	//Update UI
+	responseCont.style.display = 'flex';
 	locationEl.innerHTML = `You're going to ${city}, ${country}`;
 	dateEl.innerHTML = `You're leaving on ${displayDate}`;
 	imageEl.src = imageURL;
