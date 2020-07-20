@@ -3,9 +3,10 @@
 ## Description
 
 A project to practice:
-* configuring and using webpack build tool to organize source code. 
-* the beginnings of jest testing 
-* service workers. 
+* fetching information from multiple APIs
+* configuring and using webpack build tool to organize source code.
+* the beginnings of jest testing
+* service workers.
 * writing and debugging:
 	* server side code (Node.js/Express)
 	* asynchronous javascript
@@ -22,8 +23,9 @@ A project to practice:
 * dotenv
 * webpack
 * webpack-cli
-* Aylien Text API Credentials
-* Aylien Text API SDK
+* opencagedata API key
+* weatherbit API key
+* pixabay API key
 
 ### Dev-dependencies
 * babel/core
@@ -68,8 +70,8 @@ The following tasks were completed in this project:
 * Setup the Node.js environment.
 * Added the express, body-parser, and cors modules to Node.
 * Ran the local server and printed out logs to the Command Line.
-* Created API credentials with Aylien NLP
-* The personal API key is stored in a .env file for safe keeping.
+* Created API credentials with each API
+* The personal API key's are stored in a .env or config.js file for safe keeping.
 * Utilize webpack to organize and load files
 * Utilize webpack-dev-server to edit code in a dev friendly environment
 * Data is successfully received from the Aylien API.
