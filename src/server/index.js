@@ -65,7 +65,8 @@ async function addLocationCord(req, res) {
 		placeName: reqBody.placeName,
 	}
 	projectData.locationInfo = locationData;
-	projectData.date = reqBody.date
+	projectData.date = reqBody.date;
+	projectData.dateBack = reqBody.dateBack;
 	//fetch weather data
 	const weatherURL = `https://api.weatherbit.io/v2.0/forecast/daily/?&lat=${projectData.locationInfo.lat}&lon=${projectData.locationInfo.lng}&units=I&key=${weatherbit_key}`;
 	const responseWeather = await fetch(weatherURL)
