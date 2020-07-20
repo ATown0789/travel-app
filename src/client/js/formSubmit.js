@@ -3,6 +3,7 @@ const formSubmit = () => {
 	const country = document.getElementById('country').value;
 	const city = document.getElementById('city').value;
 	const date = document.getElementById('date').value;
+	const dateBack = document.getElementById('dateBack').value;
 	Client.getLocationCord(Client.baseURL, city, country, Client.username)
 		.then((data) => {
 			let useCity = false;
@@ -23,7 +24,6 @@ const formSubmit = () => {
 			let index = data.postalCodes.findIndex(isCityName);
 			if(index < 0)
 				index = data.postalCodes.findIndex(isPlaceName); // if no match found in adminName2 check in placeName
-			console.log(index);
 			if(index < 0)  // if still no match is found throw an alert to check for spelling.
 				return alert(`Unfortunately we cannot find any information on 
 							${city}, ${country} please check your spelling and try again.`)
@@ -33,7 +33,8 @@ const formSubmit = () => {
 			lng: data.postalCodes[index].lng,
 			lat: data.postalCodes[index].lat,
 			placeName: data.postalCodes[index].placeName,
-			date: date
+			date: date,
+			dateBack: dateBack
 			});
 		});
 	

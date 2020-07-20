@@ -10,12 +10,13 @@ const updateUI = (projectData) => {
 	const weatherData = projectData[0].weatherData;
 	const imageURL = projectData[0].locationImage;
 	const date = projectData[0].date;
+	const dateBack = projectData[0].dateBack;
 	
 	locationEl.innerHTML = `You're going to ${city}, ${country}`;
 	dateEl.innerHTML = `You're leaving on ${date}`;
 	imageEl.src = imageURL;
 	
-	Client.weatherInfo(weatherData, date);
+	Client.weatherInfo(weatherData, date, dateBack);
 }
 
 export { updateUI };
