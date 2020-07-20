@@ -33,13 +33,16 @@
 						onsubmit = "return Client.formValidation(event)"> Get Info! </button>
 				</section>
 			</form>
-			<section id ="responseCont">
+			<section id ="responseCont" class = "hide">
 				<img id = "locationImage"/ src = "">
 				<h2 class = "title">Your Travel Information</h2>
 				<div id = "location"></div>
 				<div id = "dateRes"></div>
 				<h2>Weather Forcast</h2>
 				<div id = "weatherCont"></div>
+				<button id = "reload" onclick = "return Client.reload(event)">
+					Try a different location
+				</button>
 			</section>
 		</main>
 	<footer class = "footer"></footer>

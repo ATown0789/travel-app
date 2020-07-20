@@ -5,6 +5,7 @@ import { updateUI } from './js/updateUI';
 import { formValidation } from './js/formValidation';
 import { weatherInfo } from './js/weatherInfo';
 import { config } from '../../config';
+import { reload } from './js/reload';
 
 import './styles/style.scss';
 
@@ -19,6 +20,7 @@ export {
 	updateUI,
 	formValidation,
 	weatherInfo,
+	reload,
 	baseURL,
 	username
 }

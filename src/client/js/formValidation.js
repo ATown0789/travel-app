@@ -1,12 +1,12 @@
 const formValidation = (event) => {
 	event.preventDefault();
-	
+
 	const testReg = /[\!\@\#\$\%\^\&\*\(\)\_\=\+\{\[\}\]\\\"\|\;\:\/\.\>\,\<\?]/;
-	
+
 	const country = document.getElementById('country').value;
 	const city = document.getElementById('city').value;
 	const date = document.getElementById('date').value;
-	
+
 	const today = new Date()
 	const todayDate = today.toLocaleDateString();
 	const todayTime = Math.floor(new Date(todayDate).getTime() / (1000*3600*24));

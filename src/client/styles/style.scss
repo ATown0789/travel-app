@@ -1,4 +1,4 @@
-body{
+body {
 	margin: 0;
 	display:flex;
 	justify-content: center;
@@ -7,7 +7,7 @@ body{
 	font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-#app{
+#app {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -18,7 +18,7 @@ body{
 	background: rgba(50,50,50,.4);
 	min-width: 450px;
 	max-width: 700px;
-	min-height: 100vh;
+	min-height: 99vh;
 	padding: 10px;
 }
 
@@ -28,45 +28,13 @@ label{
     font-size: 27px;
 }
 
-input{
-	padding-left: 10px;
-    height: 60px;
-    width: 320px;
-    background:#164991;
-    color: #fff;
-    font-size: 20px;
-    font-family: 'Oswald', sans-serif;
-    border: none;
-}
-
-button{
-	margin: 20px auto;
-    width: 200px;
-    height: 100px;
-    background: #3b4a6b;
-    color: #fff;
-    font-size: 26px;
-    font-family: 'Oswald', sans-serif;
-    border: none;
-    box-shadow: 2px 4px 5px #444;
-}
-
-.btnCont {
-	display: flex;
-	justify-content: center;
-}
-
 h1{
     font-size: 48px;
 	margin: 0;
 }
 
-textarea{
-	padding-left: 10px;
-    background:#164991;
-    color: #fff;
-    font-size: 20px;
-    font-family: 'Oswald', sans-serif;
+h3 {
+	text-align: center;
 }
 
 /* Reset style for HTML element on active to have no border*/
@@ -93,17 +61,65 @@ button:focus {
     font-family: 'Oswald', sans-serif;
 }
 
+input {
+	padding-left: 10px;
+    height: 60px;
+    width: 320px;
+    background:#164991;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+    border: none;
+}
+
+button {
+	margin: 20px auto 0;
+    width: 150px;
+    background: #3b4a6b;
+	padding: 20px;
+    color: #fff;
+	font: bold 26px 'Oswald', sans-serif;
+    border: none;
+    box-shadow: 2px 4px 5px #444;
+	&:hover {
+		background: #fff;
+		color: #3b4a6b;
+		cursor: pointer;
+	}
+}
+
+.btnCont {
+	display: flex;
+	justify-content: center;
+}
+
+textarea{
+	padding-left: 10px;
+    background:#164991;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+}
+
+
+#responseCont {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+
+}
+
+#locationImage {
+	width: 80%;
+	margin: 15px auto;
+}
 
 #weatherCont {
-
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
 	flex-direction: row;
-}
-
-h3 {
-	text-align: center;
 }
 
 .weatherCard {
@@ -121,7 +137,7 @@ h3 {
 }
 
 .weatherCard p {
-	margin: 0;	
+	margin: 0;
 	font-size: 16px;
 }
 
@@ -130,21 +146,13 @@ h3 {
 	width: 70%;
 }
 
-#responseCont {
-	display: none;
-	flex-direction: column;
-	justify-content: center;
-	width: 100%;
-	
-}
-
 .hide {
 	display: none !important;
 }
 
-#locationImage {
-	width: 80%;
-	margin: 15px auto;
+#reload {
+	width: 200px;
+	font-size: 20px;
 }
 
 
