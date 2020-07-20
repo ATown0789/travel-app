@@ -1,4 +1,4 @@
-# Evaluate A News Article With NLP App Project
+# FEND Capstone Travel App
 
 ## Description
 
