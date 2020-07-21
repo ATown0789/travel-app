@@ -10,7 +10,7 @@ import { reload } from './js/reload';
 import './styles/style.scss';
 
 /*APP Global Variables*/
-const baseURL = 'https://api.opencagedata.com/geocode/v1/json?'
+const baseURL = 'http://api.geonames.org/postalCodeSearchJSON?'
 const username = config.GEO_KEY;
 
 export {
