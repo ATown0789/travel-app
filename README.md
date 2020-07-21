@@ -54,11 +54,21 @@ A project to practice:
 
 3. npm install dependencies
 
-4. Get Aylien API credentials.
+4. Get OpenCageData API credentials.
 
-5. Create a .env file that contains your API credentials
+5. Get weatherbit API credentials
 
-6. Start server and open index.html
+6. Get pixabay API credentials
+
+7. Create a config.js file that contains your OpenCageData API credentials
+
+8. Create a .env file that contains your weatherbit and pixabay API credentials
+
+9. ```npm run build-prod```
+
+10. ```npm run start```
+
+11. ```npm run build-dev```
 
 ## Runtime Environment
 Any modern web browser and Node.js with npm
