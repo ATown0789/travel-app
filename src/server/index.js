@@ -32,7 +32,7 @@ app.use(cors());
 const fetch = require('node-fetch');
 
 // Initialize the main project folder
-app.use(express.static('wj-app'));
+app.use(express.static('dist'));
 
 // Callback to debug
 const listening = () => {
