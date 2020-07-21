@@ -26,9 +26,13 @@ const formSubmit = () => {
 			let index = data.postalCodes.findIndex(isCityName);	
 			if(index < 0)	
 				index = data.postalCodes.findIndex(isPlaceName); // if no match found in adminName2 check in placeName	
-			if(index < 0)  // if still no match is found throw an alert to check for spelling.	
-				return alert(`Unfortunately we cannot find any information on 	
-							${city}, ${country} please check your spelling and try again.`)	
+			if(index < 0){ // if still no match is found throw an alert to check for spelling.	
+				alert(`Unfortunately we cannot find any information on
+${city}, ${country} please check your spelling,
+ensure you're entering a city and not a country/state
+and try again.`)
+				Client.reload();
+			}
 			Client.postData('http://localhost:3000/addLocationCord',{
 			country: country,				
 			city: useCity ? city[0].toUpperCase()+city.slice(1) : data.postalCodes[index].adminName2,				city: city[0].toUpperCase()+city.slice(1),
