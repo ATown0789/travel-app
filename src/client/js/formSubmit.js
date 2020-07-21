@@ -6,6 +6,7 @@ const formSubmit = () => {
 	const dateBack = document.getElementById('dateBack').value;
 	Client.getLocationCord(Client.baseURL, city, country, Client.username)
 		.then((data) => {
+			console.log(data);
 			//post data to server side
 			let useCity = false;				//post data to server side 
 			/***	
