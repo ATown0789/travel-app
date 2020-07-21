@@ -68,7 +68,7 @@ A project to practice:
 
 10. ```npm run start```
 
-11. ```npm run build-dev```
+11. ```npm run build-dev``` or open browser and go to http://localhost:3000
 
 ## Runtime Environment
 Any modern web browser and Node.js with npm
