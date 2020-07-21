@@ -23,7 +23,7 @@ A project to practice:
 * dotenv
 * webpack
 * webpack-cli
-* opencagedata API key
+* geonames API key
 * weatherbit API key
 * pixabay API key
 
@@ -54,13 +54,13 @@ A project to practice:
 
 3. npm install dependencies
 
-4. Get OpenCageData API credentials.
+4. Get geonames API credentials.
 
 5. Get weatherbit API credentials
 
 6. Get pixabay API credentials
 
-7. Create a config.js file that contains your OpenCageData API credentials
+7. Create a config.js file that contains your geonames API credentials
 
 8. Create a .env file that contains your weatherbit and pixabay API credentials
 
